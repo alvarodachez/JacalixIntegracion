@@ -1,0 +1,35 @@
+
+.datos{
+    font-family: monospace;
+    display: grid;
+    grid-auto-columns: auto;
+    padding: 5vw;
+    grid-gap: 2vw;
+}
+.datos h1{
+    font-size: 6vw;
+    text-align: center;
+}
+.formulario{
+    display: grid;
+    grid-auto-columns: auto;
+}
+
+.botones{
+    display: grid;
+    grid-auto-columns: auto;
+    padding: 2vw;
+    grid-gap: 1vw;
+    
+}
+
+.botones button{
+    font-family: monospace;
+    
+    font-size: 4vw;
+}
+.datos .formulario label{
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 1vw;
+}

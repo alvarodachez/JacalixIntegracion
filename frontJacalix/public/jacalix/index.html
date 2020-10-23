@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacalix</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <div class="datos">
+        <h1>Productos</h1>
+        <div class="formulario">
+            <label>ID: <input id="id" type="text" placeholder="Introduce el id"></label>
+            <label>NAME: <input id="name" type="text" placeholder="Introduce el nombre"></label>
+            <label>DESCRIPTION: <input id="description" type="text" placeholder="Introduce la descripcion"></label>
+            <label>RENT TYPE: 
+                <select id="sub">
+                <option value="GOLD">GOLD</option> 
+                <option value="BASIC">BASIC</option>
+                <option value="ADVANCED">ADVANCED</option>
+            </select>
+            </label>
+            <label>CAT: 
+                <select id="category">
+                <option value="SERIE">SERIE</option> 
+                <option value="FILM">FILM</option>
+                <option value="DOCUMENTARY">DOCUMENTARY</option>
+            </select>
+            </label>
+        </div>
+        <div class="botones">
+            <button id="postProduct">Post Product</button>
+            <button id="getProduct">Get Products</button>
+            <button id="updateProduct">Update Product</button>
+        </div>
+        <div id="listar"class="listar">
+            <h3>Listado de Productos</h3>
+            <hr>
+            <table id="productos" border="1">
+                <thead>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>DESCRIPTION</th>
+                    <th>RENT</th>
+                    <th>CATEGORY</th>
+                </thead>
+                <tbody id="cuerpo">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+  
+    
+<script src="script.js"></script>
+</body>
+</html>
