@@ -1,8 +1,15 @@
+/**
+ * DECLARACION DE CONSTANTES
+ */
 const botonPostProduct = document.getElementById("postProduct");
 const botonGetProduct = document.getElementById("getProduct");
 const botonUpdateProduct = document.getElementById("updateProduct");
 const listado = document.getElementById("listar");
-
+/**
+ * 
+ * FUNCION PARA LISTAR LOS PRODUCTOS RECIBIENDO UN JSON DE LA PETICION A BACKEND
+ * @param {*} res 
+ */
 const listarProductos = (res) =>{
 
     let tabla = document.getElementById("productos");
@@ -13,13 +20,18 @@ const listarProductos = (res) =>{
     cuerpoTabla.setAttribute("id","cuerpo");
 
     for(p of res){
+        /**
+         * CREACION DE LOS NUEVOS ELEMENTOS PARA AÑADIRLOS A LA TABLA
+         */
         let fila = document.createElement("tr");
         let colid = document.createElement("td");
         let colnombre = document.createElement("td");
         let coldes = document.createElement("td");
         let colrent = document.createElement("td");
         let colcat = document.createElement("td");
-
+        /**
+         * OBTENIENDO INFORMACION DEL JSON
+         */
         let idtext = document.createTextNode(p.id);
         let nombretext = document.createTextNode(p.name);
         let destext = document.createTextNode(p.description);
@@ -40,10 +52,16 @@ const listarProductos = (res) =>{
 
         cuerpoTabla.appendChild(fila);
     }
-
+    /**
+     * REEMPLAZAMOS EL QUE YA TENEMOS EN EL HTML PARA QUE NO SE ACUMULEN OBJETOS REPETIDOS EN LA TABLA
+     */
     tabla.replaceChild(cuerpoTabla,cuerpoAntiguo);
     }
-
+/**
+ * FUNCION QUE RELLENA LOS CAMPOS DEL FORMULARIO SEGUN EL ID INTRODUCIDO.
+ * RECIBIENDO UN JSON CON EL OBJETO EN FORMATO JSON DESDE LA PETICION POR EL CAMPO ID. 
+ * @param {*} res 
+ */
 const rellenarForm = (res) =>{
     let productname = document.getElementById("name");
     let productdescription = document.getElementById("description");
@@ -58,7 +76,9 @@ const rellenarForm = (res) =>{
     
 
 }
-
+/**
+ * BOTON PARA REALIZAR LA PETICION POST AL BACKEND. RECOGE LOS CAMPOS DEL FORMULARIO Y LO PASAMOS A LA PETICION EN FORMATO JSON
+ */
 botonPostProduct.addEventListener("click", () =>{
 
     let productid = document.getElementById("id").value;
@@ -85,7 +105,9 @@ botonPostProduct.addEventListener("click", () =>{
         .then(response => response.json())
         .then(json => console.log(json))
 })
-
+/**
+ * BOTON PARA REALIZAR LA PETICION GET AL BACKEND. NOS DEVUELVE TODOS LOS RESULTADOS EN FORMATO JSON.
+ */
 botonGetProduct.addEventListener("click", () => {
 
 
@@ -98,7 +120,9 @@ botonGetProduct.addEventListener("click", () => {
         
     
 })
-
+/**
+ * BOTON PARA REALIZAR LA PETICION GET POR EL CAMPO ID AL BACKEND. NOS DEVUELVE UN RESULTADO EN FORMATO JSON.
+ */
 botonUpdateProduct.addEventListener("click", () =>{
 
     let productid = document.getElementById("id").value;
