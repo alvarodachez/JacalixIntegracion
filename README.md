@@ -126,7 +126,7 @@ Una vez hecho esto, ya estamos listos para realizar pruebas y probar la aplicaci
 
 Por ejemplo, hacemos una operación "Post" y posteriormente un "Get".
 
-<img src="C:\Users\rueda\Desktop\screenshotFront.png"  />
+![](C:\Users\rueda\Desktop\JacalixIntegracion\.screenshotFront.png)
 
 Una vez terminadas las pruebas, y queramos cerrar el entorno. Paramos el servidor Backend desde Spring Tool Suite.
 
